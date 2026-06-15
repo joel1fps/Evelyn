@@ -1,0 +1,53 @@
+#CRIAÇÃO DAS TABELAS
+
+CREATE TABLE DEPARTAMENTO (
+    codigo INT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    sigla VARCHAR(10) NOT NULL
+);
+
+CREATE TABLE COLABORADOR (
+    matricula INT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    salario DECIMAL(10,2),
+    email VARCHAR(150),
+    endereco VARCHAR(200),
+    codigo_dp INT,
+    
+    CONSTRAINT fk_colaborador_departamento
+        FOREIGN KEY (codigo_dp)
+        REFERENCES DEPARTAMENTO(codigo)
+);
+
+
+#INSERÇÃO DOS DADOS
+
+-- Inserindo departamentos
+INSERT INTO DEPARTAMENTO (codigo, nome, sigla) VALUES
+(1, 'Recursos Humanos', 'RH'),
+(2, 'Tecnologia da Informação', 'TI'),
+(3, 'Financeiro', 'FIN'),
+(4, 'Marketing', 'MKT');
+
+-- Inserindo colaboradores
+INSERT INTO COLABORADOR (matricula, nome, salario, email, endereco, codigo_dp) VALUES
+(1001, 'Ana Silva', 3500.00, 'ana.silva@empresa.com', 'Rua A, 101', 1),
+(1002, 'Bruno Souza', 4200.00, 'bruno.souza@empresa.com', 'Rua B, 102', 2),
+(1003, 'Carla Santos', 3800.00, 'carla.santos@empresa.com', 'Rua C, 103', 3),
+(1004, 'Daniel Lima', 4500.00, 'daniel.lima@empresa.com', 'Rua D, 104', 4),
+(1005, 'Eduarda Costa', 3900.00, 'eduarda.costa@empresa.com', 'Rua E, 105', 1),
+(1006, 'Felipe Rocha', 5200.00, 'felipe.rocha@empresa.com', 'Rua F, 106', 2),
+(1007, 'Gabriela Alves', 4100.00, 'gabriela.alves@empresa.com', 'Rua G, 107', 3),
+(1008, 'Henrique Martins', 4700.00, 'henrique.martins@empresa.com', 'Rua H, 108', 4),
+(1009, 'Isabela Ferreira', 3600.00, 'isabela.ferreira@empresa.com', 'Rua I, 109', 1),
+(1010, 'João Pereira', 5500.00, 'joao.pereira@empresa.com', 'Rua J, 110', 2),
+(1011, 'Karen Oliveira', 4300.00, 'karen.oliveira@empresa.com', 'Rua K, 111', 3),
+(1012, 'Lucas Gomes', 4800.00, 'lucas.gomes@empresa.com', 'Rua L, 112', 4),
+(1013, 'Mariana Ribeiro', 3700.00, 'mariana.ribeiro@empresa.com', 'Rua M, 113', 1),
+(1014, 'Nicolas Barbosa', 6000.00, 'nicolas.barbosa@empresa.com', 'Rua N, 114', 2),
+(1015, 'Olivia Carvalho', 4400.00, 'olivia.carvalho@empresa.com', 'Rua O, 115', 3),
+(1016, 'Paulo Mendes', 5100.00, 'paulo.mendes@empresa.com', 'Rua P, 116', 4),
+(1017, 'Renata Teixeira', 3950.00, 'renata.teixeira@empresa.com', 'Rua Q, 117', 1),
+(1018, 'Samuel Castro', 5700.00, 'samuel.castro@empresa.com', 'Rua R, 118', 2),
+(1019, 'Tatiane Nunes', 4250.00, 'tatiane.nunes@empresa.com', 'Rua S, 119', 3),
+(1020, 'Victor Araújo', 4900.00, 'victor.araujo@empresa.com', 'Rua T, 120', 4);
