@@ -4,7 +4,7 @@
 
 Este repositório contém a atividade de banco de dados no arquivo:
 
-- `/home/runner/work/Evelyn/Evelyn/joel1fps/Evelyn/atividade_banco_de_dados.sql`
+- `atividade_banco_de_dados.sql`
 
 O script cria um cenário simples de loja com:
 
